@@ -5,24 +5,25 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="refresh" content="30">
   <title>ShortCut</title>
 
   <style>
 
-  .ShortButton{
-  min-width: 200px;
-  display:inline-block;
-  margin-top: 3vh;
-  margin-bottom: 3vh;
-  margin-left: 5vw;
-  margin-right: 5vw;
-  padding-bottom: 3vh;
-  padding-top: 3vh;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  text-align: center;
-  background-color: #ABBAEA;
-  border-radius:3vw;
+  .MainDiv{
+    min-width: 200px;
+    display:inline-block;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    text-align: center;
+    background-color: #ABBAEA;
+    border-radius:3vw;
   }
 
 
@@ -30,14 +31,34 @@
 </head>
 
 <script>
+var USBconnected = false;
+
+window.setInterval(function() {
+  
+  var connectedstatusround = document.getElementById('connectedstatusround');
+  
+  if (USBconnected){
+  	connectedstatusround.style.backgroundColor = "#04ff00" ;
+	
+  } else {
+  	connectedstatusround.style.backgroundColor = "#ff3300" ;
+  }
+}, 1000);
+
+
+
+
+
 
 </script>
 
 <body bgcolor="#f7f7f7" style="margin:0;">
 
 
-<div style="margin:0; width:100vw; max-height:10vh; height:10vh; background-color:#0388fc;">
- <h1 style="font-weight: 400; margin:0; margin-left:3vw; font-family:verdana; margin-top:3vh; margin-bot:3.5vh; color:white; float:left; font-size:3vh;">ShortCut</h1>
+<div style="margin:0; width:100vw; max-height:10vh; height:10vh; background-color:#ffff5c;">
+ <h1 style="font-weight: 400; margin:0; margin-left:3vw; font-family:verdana; margin-top:3vh; margin-bot:3.5vh; color:grey; float:left; font-size:3vh;">VGS</h1>
+ <div id="connectedstatusround" style="height:3vh; width:3vh; background-color: #ff3300; border-radius:50%;float:right;margin:3.5vh;"> </div>
+ <h1 id="connectedstatustext" style="height:3vh; float:right;margin:3.5vh;">Not Connected</h1>
 </div>
 
 
@@ -45,49 +66,19 @@
 
  <div id="shortbuttons" style="">
 
-  <div id="button1" class="ShortButton" onclick="openlink('this', 'http://hagrid.local');" >
-   TrueNas
+  <div id="button1" class="MainDiv" onclick="openlink('this', 'http://hagrid.local');" >
+   move by pinch
   </div>
 
-  <div id="button1" class="ShortButton" onclick="openlink('this', 'http://harry.local:8080/admin');" >
-   PiHole
+  <div id="button1" class="MainDiv" onclick="openlink('this', 'http://harry.local:8080/admin');" >
+   connector
   </div>
 
-  <div id="button2" class="ShortButton" onclick="openlink('this', 'https://status.victordrijkoningen.nl');">
-   Status
+  <div id="button2" class="MainDiv" onclick="openlink('this', 'https://status.victordrijkoningen.nl');">
+   sendcodesnippet
   </div>
 
-  <div id="button3" class="ShortButton" onclick="openlink('this', 'https://bier.victordrijkoningen.nl');">
-   Bier
-  </div>
 
-  <div id="button4" class="ShortButton" onclick="openlink('this', 'http://harry.local:8123');">
-   HomeAssistant
-  </div>
-
-  <div id="button5" class="ShortButton" onclick="openlink('this', 'https://homeassistant.cedericvanrossum.com');">
-   H A Cederic
-  </div>
-
-  <div id="button6" class="ShortButton" onclick="openlink('this', 'http://192.168.201.1');">
-   Router
-  </div>
-
-  <div id="button7" class="ShortButton" onclick="openlink('this', 'https://harry.local:9443');">
-   Portainer
-  </div>
-
-  <div id="button8" class="ShortButton" onclick="openlink('this', 'http://harry.local:7878');">
-   Radarr
-  </div>
-
-  <div id="button9" class="ShortButton" onclick="openlink('this', 'http://harry.local:8989');">
-   Sonarr
-  </div>
-
-  <div id="button9" class="ShortButton" onclick="openlink('this', 'http://harry.local:8112');">
-   Deluge
-  </div>
 
 
  </div>
@@ -95,12 +86,5 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
 
 
