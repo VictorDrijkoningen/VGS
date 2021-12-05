@@ -1,3 +1,17 @@
 
 
-
+.MainDiv{
+    min-width: 200px;
+    display:inline-block;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    text-align: center;
+    background-color: #ABBAEA;
+    border-radius:3vw;
+  }
