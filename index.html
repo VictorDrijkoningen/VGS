@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>VGS</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<link rel="icon" href="http://www.yoursite.com/favicon.ico?v=3" />
+<script type="text/javascript" src="javascript.js"></script>
+
+<body style="margin:0;">
+
+
+  <div class="StartDiv">
+    <div onclick="ShowAbout()">
+      <h1
+        style="font-weight: 400; margin:0; margin-left:3vw; font-family:verdana; margin-top:3vh; color:rgb(87, 86, 86); float:left; font-size:3vh;">
+        VGS</h1>
+    </div>
+    <div onclick="serialconnect()" id="connectedstatuscolor" style="margin-right: 3vw; padding:1vh; padding-top: 1.1vh; padding-bottom: 0.9vh; float:right; margin-top: 2.5vh; border: 3px solid #fd0000; border-radius: 3vh;">
+      <h1 id="connectedstatustext" style="font-family: Arial, sans-serif; height:2vh; margin:0; font-size: medium; color: #db0f0f;">NOT CONNECTED</h1>
+    </div>
+  </div>
+
+
+  <div style="text-align:center;">
+
+    <div id="shortbuttons">
+
+      <div class="MainDivs" onclick="">
+        <div style="float:left;">
+          <table class="tablearrow">
+
+            <tr class="trarrow">
+              <td></td>
+              <td class="tdarrow" onclick="jitter('Y', '1');"><i class="arrow up"></i></td>
+              <td></td>
+            </tr>
+
+            <tr class="trarrow">
+              <td class="tdarrow" onclick="jitter('X', '-1');"><i class="arrow left"></i></td>
+              <td class="tdarrow">
+                <div class="homebutton" onclick="jitter('home', 'X Y');"></div>
+              </td>
+              <td class="tdarrow" onclick="jitter('X', '1');"><i class="arrow right"></i></td>
+            </tr>
+
+            <tr class="trarrow">
+              <td></td>
+              <td class="tdarrow" onclick="jitter('Y', '-1');"><i class="arrow down"></i></td>
+              <td></td>
+            </tr>
+
+          </table>
+        </div>
+        <div style="float:left;">
+          <table class="tablearrow" style="width: 3.33vw; border-left: 0; ">
+
+            <tr class="trarrow">
+              <td class="tdarrow" onclick="jitter('Z', '1');"><i class="arrow up"></i></td>
+            </tr>
+
+            <tr class="trarrow">
+              <td class="tdarrow" onclick="jitter('home', 'Z');">
+                <div class="homebutton"></div>
+              </td>
+            </tr>
+
+            <tr class="trarrow">
+              <td class="tdarrow" onclick="jitter('Z', '-1');"><i class="arrow down"></i></td>
+            </tr>
+
+          </table>
+        </div>
+        <div style="float: left; height:9.75vw; border-collapse: collapse; border: 1px black solid; border-left:0;">
+          <input type="file" id="gcodefile"/>
+        <div style=" margin:1vw; border-radius: 2vw; background-color: #00ffff;" onclick="startJob()"> 
+          Start job
+        </div>
+        <div style=" margin:1vw; border-radius: 2vw; background-color: #00d61d;" onclick="showJob()">
+          Show where job takes place
+        </div>
+        </div>
+        
+      </div>
+
+      <div class="MainDivs" onclick="">
+        <h1 style="margin:0; margin-bottom: 0.67em;">Settings</h1>
+        baudrate <input type="number" id="baudratesetting" value="250000">
+
+      </div>
+
+      <div class="MainDivs" onclick="">
+        <div id="OutputText" class="OutputTextCss">
+
+
+
+        </div>
+        <div>
+          <input type="text" id="InputGcodeField" value="G28">
+          <input type="button" value="Send" onclick="usergcodeinput();">
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+
+  <div id="AboutSection" hidden="true" class="AboutDiv">
+    <h1 style="text-align: center;">VGS</h1>
+    <p>
+      Welcome to VGS!
+      VGS is a browser based Gcode sender with marlin CNCs in mind.
+    </p>
+
+    <div class="AboutExitButton" onclick="ShowAbout()">
+      Exit
+    </div>
+  </div>
+
+</body>
+
+</html>
